@@ -1,6 +1,9 @@
 import React from "react";
 
 export const Main = () => {
+  React.useEffect(() => {
+    document.title = "หน้าหลัก";
+  });
   return (
     <section>
       <h4>เงินคืนภาษี</h4>
