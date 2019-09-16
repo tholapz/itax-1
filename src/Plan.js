@@ -7,13 +7,11 @@ var pieData = [
   { id: "May", value: 24.65, color: "#E3C5D5", month: "May" }
 ];
 var config = {
-  type: "pie",
+  type: "donut",
   series: [
     {
       value: "value",
-      color: "color",
-      stroke: "#FFFFFF",
-      strokeWidth: 2
+      color: "color"
     }
   ]
 };
