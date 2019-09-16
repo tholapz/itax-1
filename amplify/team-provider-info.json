@@ -1,0 +1,14 @@
+{
+    "master": {
+        "awscloudformation": {
+            "AuthRoleName": "itax-1-master-20190916194701-authRole",
+            "UnauthRoleArn": "arn:aws:iam::603554060869:role/itax-1-master-20190916194701-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::603554060869:role/itax-1-master-20190916194701-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "itax-1-master-20190916194701-deployment",
+            "UnauthRoleName": "itax-1-master-20190916194701-unauthRole",
+            "StackName": "itax-1-master-20190916194701",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:603554060869:stack/itax-1-master-20190916194701/144c50b0-d880-11e9-83cf-0e3b3e43d478"
+        }
+    }
+}
