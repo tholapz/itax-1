@@ -7,7 +7,7 @@ import { Income } from "./Income";
 import { Deduction } from "./Deduction";
 
 function App() {
-  const [path, setPath] = React.useState("2");
+  const [path, setPath] = React.useState("4");
   return (
     <div className="App">
       <Toolbar setPath={setPath} />

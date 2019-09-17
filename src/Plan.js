@@ -17,13 +17,59 @@ var config = {
 };
 
 export const Plan = () => {
+  const sliders = [
+    React.useRef(null),
+    React.useRef(null),
+    React.useRef(null),
+    React.useRef(null)
+  ];
   React.useLayoutEffect(() => {
-    var chart = new window.dhx.Chart("chart", config);
+    const chart = new window.dhx.Chart("chart", config);
     chart.data.parse(pieData);
+    const _sliders = sliders
+      .map(slider => {
+        return new window.dhx.Slider(slider.current, {
+          min: 0,
+          max: 10,
+          step: 1
+        });
+      })
+      .forEach(slider => {
+        slider.setValue(Math.random() * 10);
+        slider.config.thumbLabel = false;
+      });
   }, []);
   return (
     <section className="dhx_sample-container">
-      <div className="dhx_sample-container__widget" id="chart"></div>
+      <div className="dhx_sample-container__widget" id="chart" />
+      <div style={{ marginTop: 80 }}>
+        <button>วางแผน AUTO</button>
+      </div>
+      <ul
+        className="dhx_widget dhx_list"
+        style={{
+          position: "relative",
+          maxWidth: 400,
+          margin: "40px auto"
+        }}
+      >
+        <li className="dhx_list-item dhx_list-item--text">
+          <span>ซื้อกองทุนลดหย่อนภาษี LTF</span>
+          <div ref={sliders[0]} />
+        </li>
+        <li className="dhx_list-item dhx_list-item--text">
+          <span>ซื้อกองทุนประหยัดภาษี RMF</span>
+          <div ref={sliders[1]} />
+        </li>
+        <li className="dhx_list-item dhx_list-item--text">
+          <span>เบี้ยประกันชีวิตทั่วไป</span>
+          <div ref={sliders[2]} />
+        </li>
+        <li className="dhx_list-item dhx_list-item--text">
+          <span>เบี้ยประกันชีวิตแบบบำนาญ</span>
+          <div ref={sliders[3]} />
+        </li>
+      </ul>
     </section>
   );
 };
